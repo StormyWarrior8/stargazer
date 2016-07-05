@@ -37,14 +37,15 @@ resolver: lts-6.5
 # will not be run. This is useful for tweaking upstream packages.
 packages:
 - '.'
+# - '../servant-github'
 - location:
     git: https://github.com/yurrriq/servant-github.git
-    commit: d33b8a8b6139a5faad27a74449307850416fb111
+    commit: dbe145dea9c5676acea7467c3d6348e7c4a8a42d
 
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 extra-deps:
-- servant-github-0.1.0.4
+- servant-github-0.1.1.0
 
 # Override default flag values for local packages and extra-deps
 flags: {}
