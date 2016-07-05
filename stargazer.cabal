@@ -31,6 +31,9 @@ executable stargazer
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , stargazer
+                     , servant-server
+                     , servant-github
+                     , warp           >= 3.2.6
   default-language:    Haskell2010
 
 test-suite stargazer-test
