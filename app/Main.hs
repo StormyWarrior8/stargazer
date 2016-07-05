@@ -24,6 +24,7 @@ api = Proxy
 server :: Server API
 server
   -- GET /stars
+  -- TODO: parameterize 'shouldRecurse'
   = getStars False
 
 main :: IO ()
