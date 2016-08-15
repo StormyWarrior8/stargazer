@@ -27,5 +27,15 @@ start_link() -> supervisor:start_link({local,?SERVER}, ?MODULE, []).
 
 %% Child :: {Id,StartFunc,Restart,Shutdown,Type,Modules}
 init([]) ->
-    {ok, { {one_for_all, 0, 1}, []} }.
-
+  SupFlags   = #{strategy  => one_for_all,
+                 intensity => 0,
+                 period    => 1},
+  ElliConfig = [],                              % TODO: Add handler(s) here.
+  Elli       = #{id        => stargazer,
+                 start     => {elli,start_link,[ElliConfig]},
+                 restart   => permanent,
+                 shutdown  => 5000,
+                 type      => worker,
+                 modules   => [elli]},
+  Children   = [Elli],
+  {ok,{SupFlags,Children}}.
