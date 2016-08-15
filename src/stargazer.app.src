@@ -1,0 +1,16 @@
+{application, stargazer,
+ [{description, "GitHub star organizer."},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { stargazer_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.
